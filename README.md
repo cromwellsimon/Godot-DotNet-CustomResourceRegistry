@@ -1,4 +1,4 @@
-# Godot Mono Custom Resource Registry Plugin
+# Godot DotNet Custom Resource Registry Plugin
 
 This is a Godot C# plugin that registers custom C# resources and custom nodes for Godot. This plugin serves as a workaround for the Godot engine's [C# resource missing in context menu issue](https://github.com/godotengine/godot/issues/27470).
 
@@ -7,7 +7,7 @@ Based off of *CustomResourceRegisterPlugin* made by [wmigor](https://github.com/
 ## Installation
 
 1. Head over to the [Releases](https://github.com/Atlinx/Godot-Mono-CustomResourceRegistry/releases/latest) page of this repository.
-2. Download the "MonoCustomResourceRegistry_vXX.XX.XX" zip file of a release, unzip it, and move the "MonoCustomResourceRegistry" folder that's inside under the "res://addons" directory in your Godot project.
+2. Download the "DotNetCustomResourceRegistry_vXX.XX.XX" zip file of a release, unzip it, and move the "DotNetCustomResourceRegistry" folder that's inside under the "res://addons" directory in your Godot project.
 3. Press the **Build** button on the top right of Godot editor to rebuild the solution.
 4. Go to **Project Settings > Plugins** and press the **Enable** checkbox next to the CustomResourceRegistry plugin to enable the plugin. This will create a **"CRR"** button on the top right of the editor.
 
@@ -15,7 +15,7 @@ Based off of *CustomResourceRegisterPlugin* made by [wmigor](https://github.com/
 
 ### Adding custom C# resources/nodes:
 
-1. Add the [**RegisteredTypeAttribute**](#registeredtypeattribute) to your resource/node class. The file containing your class must have the same name as the class in order to be detected by the plugin. Make sure to add `using MonoCustomResourceRegistry;` to the top of your file to import this plugin's namespace, which contains `RegisteredTypeAttribute`.
+1. Add the [**RegisteredTypeAttribute**](#registeredtypeattribute) to your resource/node class. The file containing your class must have the same name as the class in order to be detected by the plugin. Make sure to add `using DotNetCustomResourceRegistry;` to the top of your file to import this plugin's namespace, which contains `RegisteredTypeAttribute`.
 2. Make sure your C# file is under one of the [**Resource Script Directories**](#settings)
 3. Rebuild the solution
 4. Press the **"CRR"** button to update the registered types
@@ -41,7 +41,7 @@ Anytime the Plugin registers/unregisters a resource/node, the plugin will print 
 Sample usage:
 ```C#
 // Inside a file named CustomNodeDemo.cs
-using MonoCustomResourceRegistry;
+using DotNetCustomResourceRegistry;
 
 // Registers a custom type with 
 // 	a name of "CustomNodeDemo",
@@ -55,7 +55,7 @@ public class CustomNodeDemo : Node2D
 ```
 ```C#
 // Inside a file named CustomNodeDemo2.cs
-using MonoCustomResourceRegistry;
+using DotNetCustomResourceRegistry;
 
 // Registers a custom type with 
 // 	a name of "CustomNodeDemo",
@@ -69,7 +69,7 @@ public class CustomNodeDemo2 : Button
 ```
 ```C#
 // Inside a file named CustomNodeDemo3.cs
-using MonoCustomResourceRegistry;
+using DotNetCustomResourceRegistry;
 
 // Registers a custom type with 
 // 	a name of "CustomNodeDemo",
@@ -85,7 +85,7 @@ public class CustomNodeDemo3 : Resource
 ## Settings
 
 This plugin comes with some settings to configure how C# resources are loaded.
-The settings can be accessed by going to **Project > ProjectSettings > General > Mono Custom Resource Registry**.
+The settings can be accessed by going to **Project > ProjectSettings > General > Dot Net Custom Resource Registry**.
 
 All settings are listed below:
 
