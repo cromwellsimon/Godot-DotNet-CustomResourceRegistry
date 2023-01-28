@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace MonoCustomResourceRegistry
+namespace DotNetCustomResourceRegistry
 {
 	[AttributeUsage(System.AttributeTargets.Class)]
 	public class RegisteredTypeAttribute : System.Attribute
